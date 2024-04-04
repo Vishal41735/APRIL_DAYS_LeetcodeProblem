@@ -1,0 +1,22 @@
+
+class Solution {
+public:
+    int maxDepth(string s) {
+        stack<char> st;
+        int mx = 0;
+        for(auto x : s){
+            if(x == '('){
+                st.push(x);
+            }
+            else if(x == ')'){
+               
+                mx = max( (int)st.size() , mx);
+                 st.pop();
+
+
+            }
+        }
+        return mx;
+        
+    }
+};
