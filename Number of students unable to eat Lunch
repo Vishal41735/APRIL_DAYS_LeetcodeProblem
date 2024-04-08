@@ -1,0 +1,37 @@
+class Solution {
+public:
+    int countStudents(vector<int>& students, vector<int>& sandwiches) {
+        int squareCount = 0;
+        int circularCount = 0;
+
+        for(auto i : students){
+            if(i == 1 )
+                squareCount++;
+            
+            else
+                circularCount++;
+        }
+
+        for(auto i : sandwiches){
+            if(i == 1){
+                if(squareCount > 0)
+                squareCount--;
+            
+            else
+                 break;
+            }
+            if(i == 0){
+                if(circularCount > 0)
+                    circularCount--;
+
+                else
+                    break;
+            }
+        }
+
+            return squareCount +  circularCount;
+
+
+        
+    }
+};
